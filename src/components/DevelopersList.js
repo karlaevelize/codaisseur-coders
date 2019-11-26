@@ -3,7 +3,7 @@ import React from "react";
 import { connect } from "react-redux";
 import api from "../api";
 import Developer from "./Developer";
-import developersFetched from "../store/developers/actions";
+import fetchDevelopers from "../store/developers/actions";
 
 // The "unconnected" inner component:
 class DevelopersList extends React.Component {
@@ -12,7 +12,7 @@ class DevelopersList extends React.Component {
     api("/developers").then(data => {
       // Tell the Redux store the data has been fetched
       //   console.log("data", data);
-      this.props.dispatch(developersFetched(data));
+      this.props.dispatch(fetchDevelopers);
     });
   }
 
