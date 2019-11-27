@@ -1,10 +1,20 @@
-const initialState = null;
+const initialState = { post: null, comments: [] };
 
 export default function reducer(state = initialState, action) {
+  console.log("reducer", action);
   switch (action.type) {
-    case "developers/FETCHED": {
-      // => Ask yourself: what is action.payload?
-      return action.payload;
+    case "post/FETCHED": {
+      return {
+        ...state,
+        post: action.payload
+      };
+    }
+
+    case "comment/FETCHED": {
+      return {
+        ...state,
+        comments: action.payload
+      };
     }
     default: {
       return state;

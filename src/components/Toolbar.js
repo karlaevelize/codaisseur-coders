@@ -8,6 +8,8 @@ class Toolbar extends Component {
         <Link to="/">Homepage</Link>
         <br />
         <Link to="/developers">Go to Developers page</Link>
+        <br />
+        <Link to="/read/:id">Go to Postpage</Link>
       </div>
     );
   }

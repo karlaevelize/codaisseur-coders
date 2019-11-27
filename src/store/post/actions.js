@@ -1,19 +1,31 @@
-export function fetchPost(id) {
+import api from "../../api";
+
+export default function fetchPost(id) {
   return function thunk(dispatch, getState) {
-    api(`/posts/${id}`).then(post => {
+    api(`/posts/${1}/`).then(post => {
       dispatch(setPost(post));
     });
   };
 }
 
 export function setPost(post) {
-  switch (action.type) {
-    case "posts/FETCHED": {
-      // => Ask yourself: what is action.payload?
-      return action.payload;
-    }
-    default: {
-      return state;
-    }
-  }
+  return {
+    type: "post/FETCHED",
+    payload: post
+  };
+}
+
+export function fetchComment(id) {
+  return function thunk(dispatch, getState) {
+    api(`/posts/${1}/comments`).then(comment => {
+      dispatch(setComment(comment));
+    });
+  };
+}
+
+export function setComment(comment) {
+  return {
+    type: "comment/FETCHED",
+    payload: comment
+  };
 }
