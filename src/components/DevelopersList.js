@@ -4,16 +4,15 @@ import { connect } from "react-redux";
 import api from "../api";
 import Developer from "./Developer";
 import fetchDevelopers from "../store/developers/actions";
+import { Link } from "react-router-dom";
 
 // The "unconnected" inner component:
 class DevelopersList extends React.Component {
   componentDidMount() {
-    // Do the data fetch...
-    api("/developers").then(data => {
-      // Tell the Redux store the data has been fetched
-      //   console.log("data", data);
-      this.props.dispatch(fetchDevelopers);
-    });
+    // api("/developers").then(data => {
+    //   this.props.dispatch(fetchDevelopers);
+    // });
+    this.props.dispatch(fetchDevelopers);
   }
 
   render() {
@@ -30,7 +29,9 @@ class DevelopersList extends React.Component {
         {this.props.devs
           ? this.props.devs.rows.map(developer => {
               return (
-                <Developer name={developer.name} email={developer.email} />
+                <Link to={`/details/${developer.id}`}>
+                  <Developer name={developer.name} email={developer.email} />
+                </Link>
               );
             })
           : "Loading..."}

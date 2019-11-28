@@ -2,7 +2,7 @@ import api from "../../api";
 
 export default function fetchPost(id) {
   return function thunk(dispatch, getState) {
-    api(`/posts/${1}/`).then(post => {
+    api(`/posts/${id}/`).then(post => {
       dispatch(setPost(post));
     });
   };
@@ -17,7 +17,7 @@ export function setPost(post) {
 
 export function fetchComment(id) {
   return function thunk(dispatch, getState) {
-    api(`/posts/${1}/comments`).then(comment => {
+    api(`/posts/${id}/comments`).then(comment => {
       dispatch(setComment(comment));
     });
   };

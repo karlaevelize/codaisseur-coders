@@ -8,7 +8,7 @@ function developersFetched(data) {
 }
 
 export default function fetchDevelopers(dispatch, getState) {
-  api("/developers").then(data => {
+  api("/developers?limit=100").then(data => {
     // note: just `dispatch` here now
     dispatch(developersFetched(data));
   });

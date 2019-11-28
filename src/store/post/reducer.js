@@ -6,7 +6,7 @@ export default function reducer(state = initialState, action) {
     case "post/FETCHED": {
       return {
         ...state,
-        post: action.payload
+        post: { ...action.payload }
       };
     }
 

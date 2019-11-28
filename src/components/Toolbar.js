@@ -10,6 +10,10 @@ class Toolbar extends Component {
         <Link to="/developers">Go to Developers page</Link>
         <br />
         <Link to="/read/:id">Go to Postpage</Link>
+        <br />
+        <Link to="/login">Login</Link>
+        <br />
+        <Link to="/signup">Sign Up</Link>
       </div>
     );
   }
