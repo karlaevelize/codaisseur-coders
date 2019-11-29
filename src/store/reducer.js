@@ -7,7 +7,7 @@ import detailsReducer from "./developer_details/reducer";
 
 export default combineReducers({
   developers: developersReducer,
-  postData: postReducer,
+  post: postReducer,
   auth: authReducer,
   signUp: signUpReducer,
   details: detailsReducer

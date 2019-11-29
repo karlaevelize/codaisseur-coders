@@ -10,12 +10,12 @@ export default function reducer(state = initialState, action) {
       };
     }
 
-    case "comment/FETCHED": {
-      return {
-        ...state,
-        comments: action.payload
-      };
-    }
+    // case "comment/FETCHED": {
+    //   return {
+    //     ...state,
+    //     comments: action.payload
+    //   };
+    // }
     default: {
       return state;
     }

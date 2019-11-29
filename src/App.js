@@ -8,6 +8,7 @@ import PostPage from "./components/PostPage";
 import LoginPage from "./components/LoginPage";
 import SignUp from "./components/SignUp";
 import DeveloperDetails from "./components/DeveloperDetails";
+import DeleteAccount from "./components/DeleteAccount";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/developers" component={DevelopersList} />
         <Route path="/signup" component={SignUp} />
         <Route path="/details/:id" component={DeveloperDetails} />
+        <Route path="/delete" component={DeleteAccount} />
         <Route exact path="/" component={Homepage} />
       </Switch>
     </div>

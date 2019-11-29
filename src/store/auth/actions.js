@@ -11,8 +11,9 @@ export function login(email, password) {
       }
     })
       .then(data => {
-        console.log(data);
+        console.log("hello");
         dispatch(saveAccessToken(data.jwt));
+        // dispatch(userLoggedIn(token, profile));
       })
       .catch(err => console.log("err", err));
   };
@@ -23,5 +24,12 @@ export function saveAccessToken(accessToken) {
   return {
     type: "auth/SAVE_ACCESS_TOKEN",
     payload: accessToken
+  };
+}
+
+export function userLoggedIn(token, profile) {
+  return {
+    type: "auth/USER_LOGGED_IN",
+    payload: { token: token, profile: profile }
   };
 }
